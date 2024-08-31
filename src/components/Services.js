@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../images/web.svg'; 
+import img from '../images/wesbite-development-updated.svg'; 
 import img2 from '../images/app.svg';
 import img3 from '../images/hosting.svg';
 import img4 from '../images/consultation.svg';
