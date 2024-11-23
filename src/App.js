@@ -10,12 +10,12 @@ import {
 // All pages
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+
 import Blog from './pages/Blog';
 import DemoProduct from './pages/DemoProduct';
 
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
-
 function App() {
   useEffect(() => {
     const aos_init = () => {

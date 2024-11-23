@@ -3,8 +3,9 @@ import NavBar from '../components/Navbar/NavBar';
 import Footer from '../components/Footer';
 import {useDocTitle} from '../components/CustomHook';
 import axios from 'axios';
-// import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import Notiflix from 'notiflix';
+emailjs.init("I9jD-5i_IwMUQgZHl");
 
 const Contact = () => {
     useDocTitle('FOSLX | Peshawar,Pakistan - Send us a message')
@@ -29,52 +30,58 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        document.getElementById('submitBtn').disabled = true;
-        document.getElementById('submitBtn').innerHTML = 'Loading...';
-        let fData = new FormData();
-        fData.append('first_name', firstName)
-        fData.append('last_name', lastName)
-        fData.append('email', email)
-        fData.append('phone_number', phone)
-        fData.append('message', message)
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Loading...';
 
-        axios({
-            method: "post",
-            url: process.env.REACT_APP_CONTACT_API,
-            data: fData,
-            headers: {
-                'Content-Type':  'multipart/form-data'
-            }
-        })
-        .then(function (response) {
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerHTML = 'send message';
-            clearInput()
-            //handle success
+        const templateParams = {
+            from_name: `${firstName} ${lastName}`,
+            to_name: "Admin",
+            email: email,
+            phone: phone,
+            message: message,
+            reply_to: email
+        };
+
+        emailjs.send(
+            'service_zfqh196',     // Replace with your Service ID
+            'template_ysdnyza',    // Replace with your Template ID
+            templateParams,
+            'I9jD-5i_IwMUQgZHl'   // Replace with your Public Key
+        )
+        .then((response) => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'send message';
+            clearInput();
+            
             Notiflix.Report.success(
                 'Success',
-                response.data.message,
+                'Your message has been sent successfully!',
                 'Okay',
             );
         })
-        .catch(function (error) {
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerHTML = 'send message';
-            //handle error
-            const { response } = error;
-            if(response.status === 500) {
+        .catch((error) => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'send message';
+            
+            if (error.status === 500) {
                 Notiflix.Report.failure(
                     'An error occurred',
-                    response.data.message,
+                    'Server error. Please try again later.',
                     'Okay',
                 );
             }
-            if(response.data.errors !== null) {
-                setErrors(response.data.errors)
-            }
             
+            if (error.response?.data?.errors) {
+                setErrors(error.response.data.errors);
+            } else {
+                setErrors({
+                    email: ['Failed to send message'],
+                });
+            }
         });
     }
+
     return (
         <>
             <div>
