@@ -10,6 +10,7 @@ import {
 // All pages
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 import DemoProduct from './pages/DemoProduct';
 
 import {useDocTitle} from './components/CustomHook';
@@ -39,6 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+            <Route paht="/blog" element={<Blog/>} />
             <Route path="/get-demo" element={<DemoProduct />} /> 
           </Routes>
         </ScrollToTop>
