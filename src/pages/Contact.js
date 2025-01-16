@@ -44,10 +44,10 @@ const Contact = () => {
         };
 
         emailjs.send(
-            'service_zfqh196',     // Replace with your Service ID
-            'template_ysdnyza',    // Replace with your Template ID
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
             templateParams,
-            'I9jD-5i_IwMUQgZHl'   // Replace with your Public Key
+            process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         )
         .then((response) => {
             submitBtn.disabled = false;

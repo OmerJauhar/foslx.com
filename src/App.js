@@ -14,7 +14,9 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import DemoProduct from './pages/DemoProduct';
 
-import {useDocTitle} from './components/CustomHook';
+import ConsultationPage from './pages/Consultation';
+
+import { useDocTitle } from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
 function App() {
   useEffect(() => {
@@ -40,8 +42,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
-            <Route paht="/blog" element={<Blog/>} />
-            <Route path="/get-demo" element={<DemoProduct />} /> 
+            <Route paht="/blog" element={<Blog />} />
+            <Route path="/get-demo" element={<DemoProduct />} />
+            <Route path="/consultation" element={<ConsultationPage />} />
           </Routes>
         </ScrollToTop>
       </Router>
