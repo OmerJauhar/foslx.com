@@ -2,8 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import linkedinIcon from '../images/linkedin-svg.svg';
+import { useEffect } from 'react';
 
 const Footer = () => {
+    useEffect(() => {
+        window.addEventListener('load', function () {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://widget.clutch.co/static/js/widget.js';
+            document.body.appendChild(script);
+
+            script.onload = function () {
+                // The script is loaded and now you can render the widget
+                var clutchWidget = document.querySelector('.clutch-widget');
+                if (clutchWidget) {
+                    clutchWidget.style.display = 'block';
+                    // clutchWidget.style.visibility = "visible" // Ensure it's visible after loading
+                }
+            };
+        });
+    }, []);
     return (
         <>
             <footer>
