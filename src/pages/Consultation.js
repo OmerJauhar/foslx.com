@@ -26,7 +26,7 @@ const ConsultationPage = () => {
                 <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
                     <h1 className="font-bold text-center lg:text-center text-black uppercase text-4xl">Book Your Consultation</h1>
                     <div className="calendly-inline-widget"
-                        data-url="https://calendly.com/p218055-pwr/30min?&primary_color=000000"
+                        data-url="https://calendly.com/p218055-pwr/30min?&primary_color=cdcfd3"
                         style={{ minWidth: '320px', height: '700px' }}>
                     </div>
                 </div>
