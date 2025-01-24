@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/Navbar/NavBar';
 import Footer from '../components/Footer';
 import { useDocTitle } from '../components/CustomHook';
+// import 'https://widget.clutch.co/static/js/widget.js';
 
 const Blog = () => {
     useDocTitle('FOSLX | Blog');

@@ -5,23 +5,38 @@ import linkedinIcon from '../images/linkedin-svg.svg';
 import { useEffect } from 'react';
 
 const Footer = () => {
-    useEffect(() => {
-        window.addEventListener('load', function () {
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://widget.clutch.co/static/js/widget.js';
-            document.body.appendChild(script);
+    // useEffect(() => {
+    //     let script;
+    //     const timer = setTimeout(() => {
+    //         try {
+    //             script = document.createElement('script');
+    //             script.type = 'text/javascript';
+    //             script.src = 'https://widget.clutch.co/static/js/widget.js';
+    //             script.async = true;
+    //             document.body.appendChild(script);
 
-            script.onload = function () {
-                // The script is loaded and now you can render the widget
-                var clutchWidget = document.querySelector('.clutch-widget');
-                if (clutchWidget) {
-                    clutchWidget.style.display = 'block';
-                    // clutchWidget.style.visibility = "visible" // Ensure it's visible after loading
-                }
-            };
-        });
-    }, []);
+    //             script.onload = () => {
+    //                 const clutchWidget = document.querySelector('.clutch-widget');
+    //                 if (clutchWidget) {
+    //                     clutchWidget.style.display = 'block';
+    //                     // Optionally call any initialization function if needed
+    //                     // window.CLUTCHCO.Init(); // Uncomment if there's an init function
+    //                 }
+    //             };
+    //         } catch (error) {
+    //             console.error('Error loading Clutch widget:', error);
+    //             // Implement a fallback or retry logic here
+    //         }
+    //     }, 2000); // Increase the delay as needed
+
+    //     // Clean up the timer on unmount
+    //     return () => {
+    //         clearTimeout(timer);
+    //         if (script) {
+    //             document.body.removeChild(script);
+    //         }
+    //     };
+    // }, []);
     return (
         <>
             <footer>
@@ -35,6 +50,17 @@ const Footer = () => {
                             <div className="box-border border-b-4 border-black p-8 bg-black text-white text-center rounded-lg xl:w-80 mx-auto">
                                 <h3 className="font-bold text-4xl mb-4">FOSLX</h3>
                                 <div class="clutch-widget bg-white p-4 rounded-lg" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="true" data-expandifr="true" data-scale="120" data-clutchcompany-id="2473122"></div>
+                                {/* <div
+                                    className="clutch-widget  bg-white p-4 rounded-lg"
+                                    data-url="https://widget.clutch.co"
+                                    data-widget-type="2"
+                                    data-height="45"
+                                    data-nofollow="true"
+                                    data-expandifr="true"
+                                    data-scale="100"
+                                    data-clutchcompany-id="2473122"
+                                    style={{ display: 'none' }} // Initially hide until loaded
+                                ></div> */}
                                 <div className='text-md font-medium text-white'>
                                     <h5>Peshawar KPK, Pakistan</h5>
 
@@ -84,21 +110,15 @@ const Footer = () => {
                             </div>
 
                             <div className="text-md font-medium mb-6">
-                                We’d love to connect with you!
+                                We'd love to connect with you!
                             </div>
                             <div className="mx-auto text-center mt-2">
                                 <ul className="flex justify-center mb-4 md:mb-0">
-                                    <li>
-                                        <Link to="#" className="flex justify-center items-center   rounded-full shadow transition duration-150 ease-in-out" aria-label="Twitter">
-                                            <img src={linkedinIcon} alt="LinkedIn" className="linkedin-icon" style={{ width: '24px', height: '24px', marginRight: '8px', fill: 'currentcolor' }} />
-                                        </Link>
-                                    </li>
                                     <li className="ml-4">
-                                        <Link to="#" className="flex justify-center items-center text-black hover:text-gray-500 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" aria-label="Facebook">
-                                            <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
-                                            </svg>
-                                        </Link>
+                                        <a href="https://www.linkedin.com/company/foslx" target="_blank" rel="noreferrer" className="rounded-full flex justify-center bg-white h-8 text-black  w-8  mx-1 text-center pt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className='fill-current font-black hover:animate-pulse'><circle cx="4.983" cy="5.009" r="2.188"></circle><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path></svg>
+                                        </a>
+
                                     </li>
                                 </ul>
                             </div>

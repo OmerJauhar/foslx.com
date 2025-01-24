@@ -15,6 +15,7 @@ import Blog from './pages/Blog';
 import DemoProduct from './pages/DemoProduct';
 
 import ConsultationPage from './pages/Consultation';
+import TermsCondition from './pages/TermsCondition'
 
 import { useDocTitle } from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
@@ -45,6 +46,8 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/get-demo" element={<DemoProduct />} />
             <Route path="/consultation" element={<ConsultationPage />} />
+            <Route path="/TermsCondition" element={<TermsCondition />} />
+
           </Routes>
         </ScrollToTop>
       </Router>
