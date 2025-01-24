@@ -16,6 +16,7 @@ import DemoProduct from './pages/DemoProduct';
 
 import ConsultationPage from './pages/Consultation';
 import TermsCondition from './pages/TermsCondition'
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 import { useDocTitle } from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
@@ -47,6 +48,7 @@ function App() {
             <Route path="/get-demo" element={<DemoProduct />} />
             <Route path="/consultation" element={<ConsultationPage />} />
             <Route path="/TermsCondition" element={<TermsCondition />} />
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
 
           </Routes>
         </ScrollToTop>

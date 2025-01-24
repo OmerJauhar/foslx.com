@@ -73,13 +73,13 @@ const Footer = () => {
                             <h6 className="text-white text-xl font-bold mb-4">LINKS</h6>
                             <ul className="text-md">
                                 <li className="mb-2">
-                                    <HashLink to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">About</HashLink>
+                                    <HashLink to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">About</HashLink>
                                 </li>
                                 <li className="mb-2">
-                                    <HashLink to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Services</HashLink>
+                                    <HashLink to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">Services</HashLink>
                                 </li>
                                 <li className="mb-2">
-                                    <HashLink to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Contact</HashLink>
+                                    <HashLink to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">Contact</HashLink>
                                 </li>
                             </ul>
                         </div>
@@ -89,16 +89,16 @@ const Footer = () => {
                             <h6 className="text-white text-xl font-bold mb-4">OUR SERVICES</h6>
                             <ul className="text-md">
                                 <li className="mb-2">
-                                    <Link to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Web Development</Link>
+                                    <Link to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">Web Development</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">AI Enabled Tools</Link>
+                                    <Link to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">AI Enabled Tools</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Domain and Hosting</Link>
+                                    <Link to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">Domain and Hosting</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="#" className="text-white hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">General IT Consultations</Link>
+                                    <Link to="#" className="text-white hover:text-gray-400 hover:tracking-wider transition duration-250 ease-in-out">General IT Consultations</Link>
                                 </li>
                             </ul>
                         </div>
@@ -114,6 +114,7 @@ const Footer = () => {
                             </div>
                             <div className="mx-auto text-center mt-2">
                                 <ul className="flex justify-center mb-4 md:mb-0">
+
                                     <li className="ml-4">
                                         <a href="https://www.linkedin.com/company/foslx" target="_blank" rel="noreferrer" className="rounded-full flex justify-center bg-white h-8 text-black  w-8  mx-1 text-center pt-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className='fill-current font-black hover:animate-pulse'><circle cx="4.983" cy="5.009" r="2.188"></circle><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path></svg>
@@ -126,16 +127,35 @@ const Footer = () => {
 
                     </div>
 
-                    <div className="flex flex-wrap items-center md:justify-between justify-center mx-auto px-4">
+                    <div className="flex flex-colu items-center md:justify-between justify-center mx-auto px-4">
                         <div className="w-full md:w-4/12 px-4 mx-auto text-center py-2">
-                            <div className="text-sm text-gray-200 font-semibold py-1">
-                                Copyright &copy; {new Date().getFullYear()}{"  "}
-                                <HashLink
-                                    to="#"
-                                    className=" hover:text-gray-900"
-                                >
-                                    FOSL X
-                                </HashLink>. All rights reserved.
+                            <div className="flex justify-center space-x-4 whitespace-nowrap">
+                                <div className="text-sm text-gray-200 font-semibold py-1">
+                                    Copyright &copy; {new Date().getFullYear()}{"  "}
+                                    <HashLink
+                                        to="/"
+                                        className=" hover:text-gray-400"
+                                        onClick={() => window.scrollTo(0, 0)}
+                                    >
+                                        FOSL X
+                                    </HashLink>. All rights reserved
+                                </div>
+                                <span className="text-gray-200">|</span> {/* Added separator */}
+                                <div className="text-sm text-gray-200 font-semibold py-1">
+                                    <Link to="/PrivacyPolicy" className=" hover:text-gray-400" onClick={() => window.scrollTo(0, 0)}>
+                                        Privacy Policy
+                                    </Link>
+                                </div>
+                                <span className="text-gray-200">|</span> {/* Added separator */}
+                                <div className="text-sm text-gray-200 font-semibold py-1">
+                                    <Link
+                                        to="/TermsCondition"
+                                        className=" hover:text-gray-400"
+                                        onClick={() => window.scrollTo(0, 0)}
+                                    >
+                                        Terms & Conditions
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
